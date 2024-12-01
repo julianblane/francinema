@@ -1,0 +1,7 @@
+---
+layout: post
+title:  "test 1"
+date:   2024-12-01 19:18:39 -0300
+latitude: 45.0710316
+longitude: 7.664814
+---
