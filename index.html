@@ -1,29 +1,100 @@
 ---
 ---
 <style>
-    .map-container{
-        position: relative;
-        width: 100%;
-    }
+  body {
+    height: 100vh;
+    overflow: hidden;
+    margin: 0;
+  }
 
-    .map {
-        width: 100%;
-        height: auto;
-    }
+  .nav-bar {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 50px;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+  }
 
-    .marker{
-        position: absolute;
-        width: 20px;
-        height: 20px;
-        transform: translate(-50%, -50%);
-        background-color: red;
-        border-radius: 50%;
-    }
+  .nav-buttons {
+    display: flex;
+    flex-direction: row;
+  }
+
+  .nav-buttons > div {
+    flex-grow: 1;
+    text-align: center;
+  }
+
+  .scroll-snap {
+    position: absolute;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+    height: 100vh;
+  }
+
+  .section {
+    scroll-snap-align: start;
+    /* display: flex; */
+    height: 100vh;
+    overflow: hidden;
+  }
+
+  .map-container{
+    position: relative;
+    width: 100%;
+  }
+
+  .map {
+    width: 100%;
+    height: auto;
+  }
+
+  .marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    border-radius: 50%;
+  }
 </style>
 
-<div class="map-container">
-    {% for post in site.posts %}
-        <div class="marker" style="left: {{ post.x }}%; top: {{ post.y }}%;"></div>
-    {% endfor %}
-    <img class="map" src="{{ site.baseurl }}/assets/mapa-mercator.jpeg">
-</div>
+<body>
+  <section class="scroll-snap">
+    <div class="section" id="home">
+      <h1>Francina Ramos</h1>
+    </div>
+    <div class="section" id="about">
+      <h1>about francina</h1>
+    </div>
+    <div class="section" id="map">
+      <div class="map-container">
+      {% for post in site.posts %}
+          <div class="marker" style="left: {{ post.x }}%; top: {{ post.y }}%;"></div>
+      {% endfor %}
+        <img class="map" src="{{ site.baseurl }}/assets/mapa-mercator.jpeg">
+      </div>
+    </div>
+    <div class="section" id="gallery">
+      <h1>gallery</h1>
+    </div>
+    <div class="section" id="films">
+      <h1>films</h1>
+    </div>
+    <div class="section" id="contact">
+      <h1>contact</h1>
+    </div>
+  </section>
+
+  <div class="nav-bar">
+    <div class="nav-buttons">
+      <div>Reels</div>
+      <div><a href="#films">Films</a></div>
+      <div></div>
+      <div><a href="#gallery">Portfolio</a></div>
+      <div><a href="#contact">Contact</a></div>
+    </div>
+  </div>
+</body>
