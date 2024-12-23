@@ -3,6 +3,8 @@ module Jekyll
       # generate perent x and y values for each post based on latitude and longitude
       def generate(site)
         site.posts.docs.each do |post|
+          next unless post.data["longitude"] && post.data["latitude"]
+
           map_width = 100
           map_height = 100
           

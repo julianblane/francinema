@@ -1,0 +1,29 @@
+<style>
+  .map-container{
+    position: relative;
+    width: 100%;
+  }
+
+  .map {
+    width: 100%;
+    height: auto;
+  }
+
+  .marker {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    transform: translate(-50%, -50%);
+    background-color: red;
+    border-radius: 50%;
+  }
+</style>
+
+<div class="section" id="map">
+  <div class="map-container">
+  {% for post in site.posts %}
+      <div class="marker" style="left: {{ post.x }}%; top: {{ post.y }}%;"></div>
+  {% endfor %}
+    <img class="map" src="{{ site.baseurl }}/assets/mapa-mercator.jpeg">
+  </div>
+</div>
