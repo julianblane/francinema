@@ -1,3 +1,7 @@
+<head>
+  <link rel="stylesheet" href="/assets/css/jekyll-glossary_tooltip.css">
+</head>
+
 <style>
   .map-container{
     position: relative;
@@ -17,12 +21,37 @@
     background-color: red;
     border-radius: 50%;
   }
+
+  .marker dialog {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translate(-50%, 0);
+    padding: 1em;
+    width: 20em;
+    background-color: white;
+  }
+
+  .marker:hover dialog {
+    display: block;
+  }
+
+  dialog .source {
+    font-size: 0.8em;
+    color: grey;
+  }
 </style>
 
 <div class="section" id="map">
   <div class="map-container">
-  {% for post in site.posts %}
-      <div class="marker" style="left: {{ post.x }}%; top: {{ post.y }}%;"></div>
+  {% for article in site.data.articles %}
+      <div class="marker" style="left: {{ article.x }}%; top: {{ article.y }}%;">
+        <dialog open>
+          <span class="source">{{ article.source }}</span>
+          <p><a href="{{ article.url }}">{{ article.title }}</a></p>
+        </dialog>
+      </div>
   {% endfor %}
     <img class="map" src="{{ site.baseurl }}/assets/mapa-mercator.jpeg">
   </div>
