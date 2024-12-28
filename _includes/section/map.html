@@ -3,6 +3,18 @@
 </head>
 
 <style>
+  #map .header{
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    text-align: center;
+    color: white;
+  }
+
+  #map {
+    position: relative;
+  }
+
   .map-container{
     position: relative;
     width: 100%;
@@ -44,6 +56,7 @@
 </style>
 
 <div class="section" id="map">
+  <h1 class="header">Articles</h1>
   <div class="map-container">
   {% for article in site.data.articles %}
       <div class="marker" style="left: {{ article.x }}%; top: {{ article.y }}%;">

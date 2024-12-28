@@ -38,16 +38,17 @@
     scroll-snap-align: start;
     min-height: 100vh;
   }
+
+  h1 {
+    font-size: 4em;
+    font-variant-caps: all-small-caps;
+  }
 </style>
 
 <body>
   <section class="scroll-snap">
-    <div class="section" id="home">
-      <h1>Francina Ramos</h1>
-    </div>
-    <div class="section" id="about">
-      <h1>about francina</h1>
-    </div>
+    {% include section/brand.html %}
+    {% include section/about.html %}
     {% include section/map.html %}
     {% include section/gallery.html %}
     {% include section/films.html %}
