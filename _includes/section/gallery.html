@@ -9,15 +9,24 @@
   .grid-container > div {
     background-color: grey;
     aspect-ratio: 1 / 1;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .grid-container > div > img {
+    height: 100%;
+    object-fit: cover;
   }
 </style>
 
 <div class="section" id="gallery">
     <h1>Gallery</h1>
     <div class="grid-container">
-      {% for post in site.categories.post %}
+      {% for image in site.data.gallery %}
         <div>
-          {{ post.title }}
+          <img src="{{ site.baseurl }}/assets/gallery/{{ image.category }}/{{ image.img }}" alt="Image">
         </div>
       {% endfor %}
     </div>
