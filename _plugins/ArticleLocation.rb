@@ -5,7 +5,8 @@ module Jekyll
       # generate perent x and y values for each article based on latitude and longitude
       def generate(site)
         site.data['articles'].each do |article|
-          article["source"] = URI.parse(article["url"]).host.sub(/^www\./, '')
+          host = URI.parse(article["url"]).host
+          article["source"] = host.nil? ? '' : host.sub(/^www\./, '')
 
           next unless article["longitude"] && article["latitude"]
 
