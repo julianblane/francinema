@@ -13,14 +13,22 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 80vh;
+    min-height: 80vh;
     padding: 0 4em;
   }
 
   .description {
     display: flex;
     flex-wrap: wrap;
+    flex-direction: column;
     gap: 2em;
+    align-items: anchor-center;
+  }
+
+  @media only screen and (min-width: 992px) {
+    .description {
+      flex-direction: row;
+    }
   }
 
   .description .picture {
