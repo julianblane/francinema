@@ -1,4 +1,37 @@
-<div class="brand">
-  <div>LOGO</div>
-  <h1>Francina Bogetti Ramos</h1>
+<style>
+  .section#contact {
+    background-color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+  }
+
+  .section#contact>.brand {
+    width: 25%;
+  }
+
+  .section#contact>.brand>img {
+    width: 100%;
+  }
+
+  .section#contact p {
+    font-size: 1.5em;
+    letter-spacing: 0.05em;
+    font-family: "Akira Expanded";
+    color: white;
+  }
+</style>
+
+<div class="section" id="contact">
+  <div class="brand">
+    <img src="{{ site.baseurl }}/assets/brand.png">
+  </div>
+  <p>
+    Contact :<br /><br />
+    trotamundosfilms@gmail.com <br /> 
+    (ARG) +54 9 351 743 5434<br />
+    (BRa) +55 47 9920-2789
+  </p>
 </div>
