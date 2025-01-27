@@ -1,6 +1,20 @@
 ---
 ---
 <style>
+  @font-face {
+    font-family: "Akira Expanded";
+    src:
+      local("Akira Expanded"),
+      url("{{site.baseurl}}/assets/fonts/akira-expanded.otf")
+  }
+
+  @font-face {
+    font-family: "AHDN";
+    src:
+      local("AHDN"),
+      url("{{site.baseurl}}/assets/fonts/AHDN.ttf")
+  }
+
   body {
     height: 100vh;
     overflow: hidden;
@@ -19,6 +33,13 @@
     background-image: url("{{ site.baseurl }}/assets/navbar.png");
     background-size: cover;
     background-position: center;
+  }
+
+  .nav-bar a {
+    font-family: "AHDN";
+    font-size: 4em;
+    text-decoration: none;
+    color: white;
   }
 
   .nav-buttons {
@@ -49,7 +70,8 @@
   }
 
   h1 {
-    font-size: 4em;
+    font-family: "Akira Expanded";
+    font-size: 6em;
     font-variant-caps: all-small-caps;
   }
 </style>
@@ -61,18 +83,16 @@
     {% include section/map.html %}
     {% include section/gallery.html %}
     {% include section/films.html %}
-    <div class="section" id="contact">
-      <h1>contact</h1>
-    </div>
+    {% include section/contact.html %}
   </section>
 
   <div class="nav-bar">
     <div class="nav-buttons">
-      <div><a href="#map">Map</a></div>
-      <div><a href="#gallery">Gallery</a></div>
+      <div><a href="#map">articles</a></div>
+      <div><a href="#gallery">gallery</a></div>
       <div></div>
-      <div><a href="#films">Films</a></div>
-      <div><a href="#contact">Contact</a></div>
+      <div><a href="#films">films</a></div>
+      <div><a href="#contact">contact</a></div>
     </div>
   </div>
 </body>
